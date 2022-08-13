@@ -22,6 +22,7 @@ class Dev(Configuration):
   # Build paths inside the project like this: BASE_DIR / 'subdir'.
   BASE_DIR = Path(__file__).resolve().parent.parent
   AUTH_USER_MODEL = "blango_auth.User"
+  REGISTRATION_OPEN = True
   LOGGING = {
     "version": 1,
     "disable_existing_loggers": False,
@@ -92,13 +93,16 @@ class Dev(Configuration):
       'django.contrib.sessions',
       'django.contrib.messages',
       'django.contrib.staticfiles',
+      'blango_auth',
       'blog',
-      "blango_auth",
       "crispy_forms",
       "crispy_bootstrap5",
       "debug_toolbar",
 
   ]
+  EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+  ACCOUNT_ACTIVATION_DAYS = 7
+
   INTERNAL_IPS = ["192.168.10.226"]
   MIDDLEWARE = [
       "debug_toolbar.middleware.DebugToolbarMiddleware",
