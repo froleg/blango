@@ -102,7 +102,8 @@ class Dev(Configuration):
       "allauth", 
       "allauth.account", 
       "allauth.socialaccount", 
-      "allauth.socialaccount.providers.google"
+      "allauth.socialaccount.providers.google",
+      "rest_framework",
   ]
   #AllaTH
   SITE_ID = 1
