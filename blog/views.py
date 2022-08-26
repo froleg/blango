@@ -37,3 +37,7 @@ def post_detail(request, slug):
         comment_form = None
     logger.info("Created comment on Post %d for user %s", post.pk, request.user)
     return render(request, "blog/post-detail.html", {"post": post, "comment_form": comment_form})
+
+
+def post_table(request):
+    return render(request, "blog/post-table.html")
